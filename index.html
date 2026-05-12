@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ficha P4 — Fortalecimiento Infraestructura Estratégica | OSCC Barranquilla</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep:    #0a0d14;
+  --navy:    #0d1322;
+  --card:    #111827;
+  --card2:   #131c2e;
+  --amber:   #f59e0b;
+  --amb-l:   #fcd34d;
+  --amb-bg:  rgba(245,158,11,0.09);
+  --amb-brd: rgba(245,158,11,0.28);
+  --copper:  #d97706;
+  --steel:   #38bdf8;
+  --stl-bg:  rgba(56,189,248,0.08);
+  --stl-brd: rgba(56,189,248,0.25);
+  --bas:     #ef4444; --bas-bg: rgba(239,68,68,0.08);  --bas-brd: rgba(239,68,68,0.25);
+  --inf:     #f97316; --inf-bg: rgba(249,115,22,0.08);  --inf-brd: rgba(249,115,22,0.25);
+  --tra:     #3b82f6; --tra-bg: rgba(59,130,246,0.08);  --tra-brd: rgba(59,130,246,0.25);
+  --infe:    #8b5cf6; --ife-bg: rgba(139,92,246,0.08);  --ife-brd: rgba(139,92,246,0.25);
+  --seg:     #10b981; --seg-bg: rgba(16,185,129,0.08);  --seg-brd: rgba(16,185,129,0.25);
+  --verde:   #10b981; --ver-bg: rgba(16,185,129,0.08);  --ver-brd: rgba(16,185,129,0.25);
+  --rojo:    #ef4444; --roj-bg: rgba(239,68,68,0.08);   --roj-brd: rgba(239,68,68,0.25);
+  --border:  rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.05);
+  --ink:     rgba(255,255,255,0.85);
+  --ink2:    rgba(255,255,255,0.58);
+  --ink3:    rgba(255,255,255,0.35);
+  --white:   #ffffff;
+  --r: 10px; --r2: 16px;
+  --shadow: 0 4px 28px rgba(0,0,0,0.4);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--deep);color:var(--ink);min-height:100vh;font-size:15px;line-height:1.65;}
+
+/* STRIPE */
+.stripe{height:3px;background:linear-gradient(90deg,var(--copper),var(--amber),var(--amb-l),var(--steel),var(--amber));}
+
+/* TOPBAR */
+.topbar{background:rgba(13,19,34,0.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;position:sticky;top:0;z-index:100;}
+.tb-left{display:flex;align-items:center;gap:12px;}
+.tb-logo{width:36px;height:36px;border-radius:8px;background:var(--amb-bg);border:1px solid var(--amb-brd);display:flex;align-items:center;justify-content:center;font-size:1.2em;}
+.tb-name{font-family:'Syne',sans-serif;font-size:.85em;font-weight:700;color:var(--white);line-height:1.2;}
+.tb-name span{display:block;font-weight:400;font-family:'DM Sans',sans-serif;font-size:.85em;color:var(--ink3);}
+.tb-badges{display:flex;gap:8px;flex-wrap:wrap;}
+.tb-badge{padding:4px 11px;border-radius:20px;font-size:.7em;font-weight:700;letter-spacing:.05em;background:var(--amb-bg);border:1px solid var(--amb-brd);color:var(--amb-l);}
+.tb-badge.s{background:var(--stl-bg);border-color:var(--stl-brd);color:var(--steel);}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,var(--navy) 0%,#1a1000 55%,#0c1520 100%);padding:52px 28px 72px;position:relative;overflow:hidden;}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:28px;background:var(--deep);border-radius:28px 28px 0 0;}
+.hglow{position:absolute;top:-100px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.13) 0%,transparent 65%);pointer-events:none;}
+.hglow2{position:absolute;bottom:-80px;left:-60px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.08) 0%,transparent 65%);pointer-events:none;}
+.hero-inner{max-width:820px;margin:0 auto;position:relative;z-index:1;}
+.hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+.htag{padding:4px 13px;border-radius:20px;font-size:.7em;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.ht-p4{background:var(--amb-bg);border:1px solid var(--amb-brd);color:var(--amb-l);}
+.ht-cart{background:var(--stl-bg);border:1px solid var(--stl-brd);color:var(--steel);}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(1.8em,4vw,2.8em);font-weight:800;color:var(--white);line-height:1.1;margin-bottom:14px;}
+.hero h1 em{color:var(--amb-l);font-style:normal;}
+.hero h1 em.b{color:var(--steel);}
+.hero-desc{color:var(--ink2);font-size:.93em;max-width:680px;line-height:1.75;margin-bottom:28px;}
+.hero-chips{display:flex;gap:12px;flex-wrap:wrap;}
+.hchip{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 16px;color:var(--ink);font-size:.82em;}
+.hchip strong{font-weight:700;color:var(--amb-l);}
+
+/* FENOMENOS CHIPS en hero */
+.fenos{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px;}
+.feno-tag{padding:5px 13px;border-radius:20px;font-size:.73em;font-weight:700;border:1px solid;}
+.ft-bas{background:var(--bas-bg);border-color:var(--bas-brd);color:#fca5a5;}
+.ft-inf{background:var(--inf-bg);border-color:var(--inf-brd);color:#fdba74;}
+.ft-tra{background:var(--tra-bg);border-color:var(--tra-brd);color:#93c5fd;}
+.ft-ife{background:var(--ife-bg);border-color:var(--ife-brd);color:#c4b5fd;}
+.ft-seg{background:var(--seg-bg);border-color:var(--seg-brd);color:#6ee7b7;}
+
+/* WRAPPER */
+.wrapper{max-width:820px;margin:0 auto;padding:32px 24px 72px;}
+
+/* PROGRESS */
+.progress-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:16px 22px;margin-bottom:28px;}
+.prog-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.prog-label{font-family:'Syne',sans-serif;font-size:.74em;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink3);}
+.prog-pct{font-family:'Syne',sans-serif;font-size:.85em;font-weight:800;color:var(--amber);}
+.prog-track{height:5px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--copper),var(--amber),var(--steel));border-radius:3px;transition:width .4s ease;width:0%;}
+.prog-steps{display:flex;gap:5px;margin-top:12px;flex-wrap:wrap;}
+.ps{flex:1;min-width:72px;padding:5px 8px;border-radius:6px;font-size:.67em;font-weight:600;text-align:center;cursor:pointer;background:rgba(255,255,255,.05);color:var(--ink3);border:1px solid transparent;transition:all .2s;}
+.ps.active{background:var(--amb-bg);color:var(--amb-l);border-color:var(--amb-brd);}
+.ps.done{background:var(--ver-bg);color:var(--verde);border-color:var(--ver-brd);}
+
+/* SECTION */
+.section{display:none;animation:fadeUp .3s ease;}
+.section.visible{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* CARD */
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r2);padding:28px 30px;margin-bottom:20px;box-shadow:var(--shadow);}
+.card-hdr{display:flex;align-items:flex-start;gap:16px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--border2);}
+.card-ico{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4em;flex-shrink:0;}
+.ico-amb{background:var(--amb-bg);border:1px solid var(--amb-brd);}
+.ico-stl{background:var(--stl-bg);border:1px solid var(--stl-brd);}
+.ico-bas{background:var(--bas-bg);border:1px solid var(--bas-brd);}
+.ico-inf{background:var(--inf-bg);border:1px solid var(--inf-brd);}
+.ico-tra{background:var(--tra-bg);border:1px solid var(--tra-brd);}
+.ico-ife{background:var(--ife-bg);border:1px solid var(--ife-brd);}
+.ico-seg{background:var(--seg-bg);border:1px solid var(--seg-brd);}
+.ico-ver{background:var(--ver-bg);border:1px solid var(--ver-brd);}
+.card-sec-lbl{font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--ink3);margin-bottom:3px;}
+.card-title{font-family:'Syne',sans-serif;font-size:1.06em;font-weight:700;color:var(--white);}
+
+/* FORM */
+.field{margin-bottom:18px;}
+label{display:block;font-size:.85em;font-weight:600;color:var(--ink2);margin-bottom:6px;}
+label .req{color:var(--bas);margin-left:3px;}
+label .hint{font-weight:400;color:var(--ink3);font-size:.9em;margin-left:4px;}
+input[type="text"],input[type="number"],input[type="date"],input[type="time"],textarea,select{
+  width:100%;padding:10px 14px;border:1.5px solid rgba(255,255,255,.12);border-radius:var(--r);
+  background:rgba(255,255,255,.04);color:var(--white);font-family:'DM Sans',sans-serif;font-size:.9em;
+  transition:border-color .2s,box-shadow .2s;appearance:none;-webkit-appearance:none;
+}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--amber);box-shadow:0 0 0 3px rgba(245,158,11,.15);background:rgba(255,255,255,.06);}
+input.error,textarea.error,select.error{border-color:var(--rojo);box-shadow:0 0 0 3px rgba(239,68,68,.12);}
+textarea{resize:vertical;min-height:90px;}
+select option{background:var(--card);color:var(--white);}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,0.4)' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:38px;}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media(max-width:560px){.field-row{grid-template-columns:1fr;}.card{padding:22px 18px;}.wrapper{padding:20px 16px 60px;}}
+
+.sub-hdr{font-family:'Syne',sans-serif;font-size:.76em;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--ink3);margin:22px 0 14px;display:flex;align-items:center;gap:8px;}
+.sub-hdr::after{content:'';flex:1;height:1px;background:var(--border2);}
+.field-sep{border:none;border-top:1px solid var(--border2);margin:20px 0;}
+
+/* OPTIONS */
+.opts{display:flex;flex-direction:column;gap:7px;}
+.opts.h{flex-direction:row;flex-wrap:wrap;gap:7px;}
+.opt-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border:1.5px solid rgba(255,255,255,.1);border-radius:var(--r);cursor:pointer;transition:all .18s;background:rgba(255,255,255,.03);font-size:.88em;color:var(--ink2);}
+.opt-item:hover{border-color:var(--amber);background:var(--amb-bg);}
+.opt-item input{accent-color:var(--amber);cursor:pointer;width:auto;height:auto;padding:0;border:none;background:none;box-shadow:none;}
+.opt-item.selected{border-color:var(--amber);background:var(--amb-bg);color:var(--amb-l);font-weight:600;}
+
+/* NIVEL */
+.nivel-opts{display:flex;gap:10px;flex-wrap:wrap;}
+.nivel-opt{flex:1;min-width:90px;padding:13px 10px;border-radius:10px;border:2px solid;text-align:center;cursor:pointer;font-size:.8em;font-weight:700;transition:all .2s;}
+.nivel-opt input{display:none;}
+.nivel-opt.alto  {border-color:rgba(239,68,68,.4);color:var(--bas);background:var(--bas-bg);}
+.nivel-opt.medio {border-color:rgba(245,158,11,.4);color:var(--amber);background:var(--amb-bg);}
+.nivel-opt.bajo  {border-color:rgba(16,185,129,.4);color:var(--verde);background:var(--ver-bg);}
+.nivel-opt.alto.sel  {background:var(--bas);color:#fff;border-color:var(--bas);}
+.nivel-opt.medio.sel {background:var(--copper);color:#fff;border-color:var(--copper);}
+.nivel-opt.bajo.sel  {background:var(--verde);color:#fff;border-color:var(--verde);}
+
+/* CHIPS */
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px;}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:20px;font-size:.78em;font-weight:600;cursor:pointer;border:1.5px solid;transition:all .18s;user-select:none;}
+.chip input{display:none;}
+.c-amb{border-color:var(--amb-brd);color:var(--amb-l);background:var(--amb-bg);}
+.c-stl{border-color:var(--stl-brd);color:var(--steel);background:var(--stl-bg);}
+.c-bas{border-color:var(--bas-brd);color:#fca5a5;background:var(--bas-bg);}
+.c-inf{border-color:var(--inf-brd);color:#fdba74;background:var(--inf-bg);}
+.c-tra{border-color:var(--tra-brd);color:#93c5fd;background:var(--tra-bg);}
+.c-ife{border-color:var(--ife-brd);color:#c4b5fd;background:var(--ife-bg);}
+.c-seg{border-color:var(--seg-brd);color:#6ee7b7;background:var(--seg-bg);}
+.chip.sel.c-amb{background:var(--amber);color:#000;border-color:var(--amber);}
+.chip.sel.c-stl{background:var(--steel);color:#000;border-color:var(--steel);}
+.chip.sel.c-bas{background:var(--bas);color:#fff;border-color:var(--bas);}
+.chip.sel.c-inf{background:var(--inf);color:#fff;border-color:var(--inf);}
+.chip.sel.c-tra{background:var(--tra);color:#fff;border-color:var(--tra);}
+.chip.sel.c-ife{background:var(--infe);color:#fff;border-color:var(--infe);}
+.chip.sel.c-seg{background:var(--seg);color:#000;border-color:var(--seg);}
+
+/* INFO BOX */
+.info-box{border-radius:var(--r);padding:13px 18px;display:flex;gap:12px;align-items:flex-start;margin-bottom:18px;font-size:.88em;line-height:1.6;}
+.info-box.amb{background:var(--amb-bg);border:1px solid var(--amb-brd);color:var(--amb-l);}
+.info-box.stl{background:var(--stl-bg);border:1px solid var(--stl-brd);color:var(--steel);}
+.info-box.ver{background:var(--ver-bg);border:1px solid var(--ver-brd);color:var(--verde);}
+.info-box.roj{background:var(--roj-bg);border:1px solid var(--roj-brd);color:var(--rojo);}
+.info-box.bas{background:var(--bas-bg);border:1px solid var(--bas-brd);color:#fca5a5;}
+.info-box .ico{font-size:1.2em;flex-shrink:0;margin-top:1px;}
+.info-box p strong{color:inherit;}
+
+/* FENOMENO BLOCK */
+.feno-block{border-radius:var(--r2);overflow:hidden;margin-bottom:22px;border:1px solid;}
+.feno-block.fb-bas{border-color:var(--bas-brd);}
+.feno-block.fb-inf{border-color:var(--inf-brd);}
+.feno-block.fb-tra{border-color:var(--tra-brd);}
+.feno-block.fb-ife{border-color:var(--ife-brd);}
+.feno-block.fb-seg{border-color:var(--seg-brd);}
+.feno-hdr{padding:16px 22px;display:flex;align-items:center;gap:12px;cursor:pointer;}
+.feno-hdr.bas{background:var(--bas-bg);}
+.feno-hdr.inf{background:var(--inf-bg);}
+.feno-hdr.tra{background:var(--tra-bg);}
+.feno-hdr.ife{background:var(--ife-bg);}
+.feno-hdr.seg{background:var(--seg-bg);}
+.feno-ico{font-size:1.5em;}
+.feno-hdr-txt{flex:1;}
+.feno-num{font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px;}
+.feno-name{font-family:'Syne',sans-serif;font-size:.95em;font-weight:700;color:var(--white);}
+.feno-toggle{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8em;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--ink2);transition:all .25s;}
+.feno-toggle.open{background:rgba(255,255,255,.15);transform:rotate(180deg);}
+.feno-body{padding:22px;background:rgba(255,255,255,.02);display:none;}
+.feno-body.open{display:block;}
+.feno-num.bas{color:#fca5a5;} .feno-num.inf{color:#fdba74;} .feno-num.tra{color:#93c5fd;} .feno-num.ife{color:#c4b5fd;} .feno-num.seg{color:#6ee7b7;}
+
+/* PUNTAJE */
+.score-display{padding:12px 16px;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:var(--r);font-family:'Syne',sans-serif;font-size:1em;font-weight:800;margin-bottom:10px;}
+
+/* CHAR COUNTER */
+.char-counter{text-align:right;font-size:.72em;color:var(--ink3);margin-top:3px;}
+.char-counter.warn{color:var(--amber);}
+.char-counter.over{color:var(--bas);}
+
+/* VAL MSG */
+.val-msg{font-size:.78em;color:var(--bas);margin-top:4px;display:none;}
+.val-msg.visible{display:block;}
+
+/* GPS */
+.gps-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;margin-bottom:8px;}
+@media(max-width:480px){.gps-row{grid-template-columns:1fr;}}
+.btn-gps{padding:10px 18px;background:var(--amb-bg);border:1px solid var(--amb-brd);border-radius:var(--r);color:var(--amb-l);font-family:'DM Sans',sans-serif;font-size:.85em;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .2s;}
+.btn-gps:hover{background:rgba(245,158,11,.2);}
+.gps-status{font-size:.79em;margin-top:4px;}
+.gps-status.ok{color:var(--verde);}
+.gps-status.err{color:var(--bas);}
+
+/* PHOTOS */
+.photo-zone{border:2px dashed rgba(255,255,255,.14);border-radius:12px;padding:28px;text-align:center;background:rgba(255,255,255,.02);cursor:pointer;transition:all .2s;}
+.photo-zone:hover{border-color:var(--amber);background:var(--amb-bg);}
+.photo-zone-ico{font-size:2em;margin-bottom:8px;}
+.photo-zone p{font-size:.84em;color:var(--ink3);}
+.photo-preview{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.photo-thumb{width:80px;height:80px;object-fit:cover;border-radius:8px;border:2px solid var(--amb-brd);}
+
+/* NAV */
+.nav-btns{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:10px;padding-top:20px;border-top:1px solid var(--border2);}
+.btn{padding:11px 24px;border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.9em;font-weight:600;cursor:pointer;border:none;transition:all .2s;display:flex;align-items:center;gap:7px;}
+.btn-prev{background:rgba(255,255,255,.06);color:var(--ink2);border:1.5px solid rgba(255,255,255,.12);}
+.btn-prev:hover{background:rgba(255,255,255,.1);}
+.btn-next{background:var(--amber);color:#000;box-shadow:0 4px 18px rgba(245,158,11,.35);}
+.btn-next:hover{background:var(--amb-l);transform:translateY(-1px);}
+.btn-submit{background:linear-gradient(135deg,var(--copper),var(--amber),var(--steel));color:#000;box-shadow:0 4px 18px rgba(245,158,11,.35);padding:13px 28px;font-size:.95em;}
+.btn-submit:hover{opacity:.9;transform:translateY(-1px);}
+.btn-draft{background:transparent;color:var(--ink3);border:1.5px solid rgba(255,255,255,.1);font-size:.82em;padding:8px 16px;}
+.btn-draft:hover{color:var(--amb-l);border-color:var(--amb-brd);}
+
+/* SUCCESS */
+.success-screen{display:none;text-align:center;padding:52px 28px;background:var(--card);border:1px solid var(--border);border-radius:var(--r2);box-shadow:var(--shadow);}
+.success-screen.visible{display:block;}
+.success-ico{font-size:3.5em;margin-bottom:16px;}
+.success-screen h2{font-family:'Syne',sans-serif;font-size:1.7em;font-weight:800;color:var(--amb-l);margin-bottom:10px;}
+.success-screen p{color:var(--ink2);font-size:.92em;max-width:440px;margin:0 auto 20px;line-height:1.7;}
+.success-code{display:inline-block;padding:8px 20px;background:var(--amb-bg);border:1px solid var(--amb-brd);border-radius:8px;font-family:'Syne',sans-serif;font-size:1.1em;font-weight:800;color:var(--amb-l);margin-bottom:24px;letter-spacing:.06em;}
+.btn-new-form{padding:11px 24px;background:var(--amber);color:#000;border:none;border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.9em;font-weight:700;cursor:pointer;transition:all .2s;margin-right:10px;}
+.btn-print{padding:11px 24px;background:rgba(255,255,255,.06);color:var(--ink2);border:1.5px solid rgba(255,255,255,.12);border-radius:var(--r);font-family:'DM Sans',sans-serif;font-size:.9em;font-weight:600;cursor:pointer;}
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="tb-left">
+    <div class="tb-logo">🏗️</div>
+    <div class="tb-name">OSCC — Barranquilla
+      <span>Oficina de Seguridad y Convivencia Ciudadana</span>
+    </div>
+  </div>
+  <div class="tb-badges">
+    <span class="tb-badge">P4 — Infraestructura Estratégica</span>
+    <span class="tb-badge s">CONVIVE 360°</span>
+    <span class="tb-badge">Cartografía Social</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hglow"></div><div class="hglow2"></div>
+  <div class="hero-inner">
+    <div class="hero-tags">
+      <span class="htag ht-p4">Programa P4</span>
+      <span class="htag ht-cart">Cartografía Social Participativa</span>
+    </div>
+    <h1>Ficha de <em>Fortalecimiento</em><br>de Infraestructura <em class="b">Estratégica</em></h1>
+    <p class="hero-desc">Instrumento oficial para la lectura participativa del territorio y el diagnóstico de los cinco fenómenos críticos que afectan la seguridad y la convivencia en las cinco localidades de Barranquilla. La información registrada genera recomendaciones técnicas para la recuperación del espacio público, la infraestructura urbana y la iluminación en zonas priorizadas.</p>
+    <div class="hero-chips">
+      <div class="hchip">🗺️ <strong>5 Fenómenos</strong> &nbsp;a cartografiar</div>
+      <div class="hchip">📋 <strong>6 Secciones</strong> &nbsp;de levantamiento</div>
+      <div class="hchip">⏱ <strong>30–45 min</strong> &nbsp;por taller de cartografía</div>
+      <div class="hchip">👥 <strong>Participativo</strong> &nbsp;con comunidad y JAC</div>
+    </div>
+    <div class="fenos">
+      <span class="feno-tag ft-bas">🗑️ Basuras</span>
+      <span class="feno-tag ft-inf">🏪 Informalidad</span>
+      <span class="feno-tag ft-tra">🚌 Transporte</span>
+      <span class="feno-tag ft-ife">🏚️ Infraestructura</span>
+      <span class="feno-tag ft-seg">🔦 Seguridad / Iluminación</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="wrapper">
+
+  <!-- PROGRESS -->
+  <div class="progress-wrap">
+    <div class="prog-top">
+      <span class="prog-label">Progreso de la ficha</span>
+      <span class="prog-pct" id="pct">0%</span>
+    </div>
+    <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+    <div class="prog-steps">
+      <div class="ps active" onclick="goTo(0)">1. Identificación</div>
+      <div class="ps" onclick="goTo(1)">2. Contexto del Sector</div>
+      <div class="ps" onclick="goTo(2)">3. Fenómenos Críticos</div>
+      <div class="ps" onclick="goTo(3)">4. Cartografía Social</div>
+      <div class="ps" onclick="goTo(4)">5. Actores y Brechas</div>
+      <div class="ps" onclick="goTo(5)">6. Recomendaciones</div>
+    </div>
+  </div>
+
+  <!-- ══════ SEC 1 — IDENTIFICACIÓN ══════ -->
+  <div class="section visible" id="sec-0">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-amb">📋</div>
+        <div>
+          <div class="card-sec-lbl">Sección 1 de 6</div>
+          <div class="card-title">Identificación del Taller de Cartografía</div>
+        </div>
+      </div>
+
+      <div class="info-box amb">
+        <span class="ico">🗺️</span>
+        <p><strong>Instrucción:</strong> Diligencie esta sección al inicio del taller participativo. Los campos con <span style="color:var(--bas)">*</span> son obligatorios. El código de ficha se genera automáticamente.</p>
+      </div>
+
+      <div class="field">
+        <label>Código de ficha <span class="hint">(generado automáticamente)</span></label>
+        <input type="text" id="codigo" readonly placeholder="Se generará al seleccionar localidad y fecha" style="background:rgba(255,255,255,.03);color:var(--ink3);">
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Fecha del taller <span class="req">*</span></label>
+          <input type="date" id="fecha" required>
+          <div class="val-msg" id="val-fecha">Ingrese la fecha del taller.</div>
+        </div>
+        <div class="field">
+          <label>Hora de inicio <span class="req">*</span></label>
+          <input type="time" id="hora-inicio" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Localidad <span class="req">*</span></label>
+        <select id="localidad" required onchange="generarCodigo()">
+          <option value="">— Seleccione la localidad —</option>
+          <option value="MET">Metropolitana</option>
+          <option value="NCH">Norte-Centro Histórico</option>
+          <option value="RIO">Riomar</option>
+          <option value="SOC">Suroccidente</option>
+          <option value="SOR">Suroriente</option>
+        </select>
+        <div class="val-msg" id="val-localidad">Seleccione la localidad.</div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Barrio / Sector <span class="req">*</span></label>
+          <input type="text" id="barrio" placeholder="Nombre del barrio o sector" required>
+          <div class="val-msg" id="val-barrio">Ingrese el nombre del barrio.</div>
+        </div>
+        <div class="field">
+          <label>Tipo de sesión <span class="req">*</span></label>
+          <select id="tipo-sesion" required>
+            <option value="">— Seleccione —</option>
+            <option>Taller comunitario de cartografía</option>
+            <option>Recorrido de campo con líderes</option>
+            <option>Mesa interinstitucional de diagnóstico</option>
+            <option>Sesión con JAC y comunidad</option>
+            <option>Recorrido técnico OSCC + Policía</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Lugar exacto donde se realiza el taller</label>
+        <input type="text" id="lugar" placeholder="Ej: Salón comunal JAC Barrio Las Flores, Cra 38 con Clle 52...">
+      </div>
+
+      <div class="sub-hdr">📍 Coordenadas GPS del Sector</div>
+      <div class="info-box amb">
+        <span class="ico">📡</span>
+        <p>Capture las coordenadas del punto central del sector a cartografiar. Si está en el salón comunal, capture la ubicación al salir al campo.</p>
+      </div>
+      <div class="gps-row">
+        <div class="field"><label>Latitud</label><input type="text" id="lat" placeholder="Ej: 10.9685" readonly></div>
+        <div class="field"><label>Longitud</label><input type="text" id="lng" placeholder="Ej: -74.7813" readonly></div>
+        <button class="btn-gps" id="btn-gps" onclick="capturarGPS()">📡 Capturar GPS</button>
+      </div>
+      <div class="gps-status" id="gps-status"></div>
+
+      <div class="sub-hdr">👤 Responsable del Levantamiento</div>
+      <div class="field-row">
+        <div class="field">
+          <label>Nombre completo <span class="req">*</span></label>
+          <input type="text" id="resp-nombre" placeholder="Nombre y apellidos" required>
+          <div class="val-msg" id="val-resp">Ingrese el nombre del responsable.</div>
+        </div>
+        <div class="field">
+          <label>Cargo <span class="req">*</span></label>
+          <select id="resp-cargo" required>
+            <option value="">— Seleccione —</option>
+            <option>Gestor de Convivencia — OSCC</option>
+            <option>Enlace Policía Nacional</option>
+            <option>Representante Alcaldía Local</option>
+            <option>Funcionario MEBAR</option>
+            <option>Funcionario Secretaría de Infraestructura</option>
+            <option>Funcionario Espacio Público</option>
+            <option>Planeación Distrital</option>
+            <option>Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Entidad</label><input type="text" id="resp-entidad" placeholder="Nombre de la entidad"></div>
+        <div class="field"><label>Teléfono / Contacto</label><input type="text" id="resp-tel" placeholder="Número de contacto"></div>
+      </div>
+      <div class="field">
+        <label>Otras personas que participan <span class="hint">(separar con coma)</span></label>
+        <input type="text" id="acompanantes" placeholder="Ej: Pedro Martínez (JAC Barrio Las Flores), Sargento Gómez (Policía Cuadrante 4)">
+      </div>
+      <div class="field-row">
+        <div class="field">
+          <label>N° de participantes en el taller</label>
+          <input type="number" id="num-part" min="1" max="500" placeholder="Total asistentes" style="max-width:160px;">
+        </div>
+        <div class="field">
+          <label>N° de líderes comunitarios</label>
+          <input type="number" id="num-lideres" min="0" max="200" placeholder="Líderes JAC / barrio" style="max-width:160px;">
+        </div>
+      </div>
+
+      <div class="nav-btns">
+        <span></span>
+        <button class="btn btn-next" onclick="siguiente(0)">Siguiente — Contexto del Sector →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ SEC 2 — CONTEXTO DEL SECTOR ══════ -->
+  <div class="section" id="sec-1">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-stl">🗺️</div>
+        <div>
+          <div class="card-sec-lbl">Sección 2 de 6</div>
+          <div class="card-title">Contexto General del Sector</div>
+        </div>
+      </div>
+
+      <div class="info-box stl">
+        <span class="ico">ℹ️</span>
+        <p>Registre las características generales del sector a cartografiar: tipo de territorio, extensión aproximada, límites y condiciones de base que contextualizan los fenómenos a documentar.</p>
+      </div>
+
+      <div class="field">
+        <label>Descripción del sector <span class="req">*</span> <span class="hint">(límites, extensión, características físicas generales)</span></label>
+        <textarea id="desc-sector" placeholder="Describa el sector: barrios incluidos, límites aproximados (calles, carreras, hitos), extensión estimada, tipo de zona (residencial, comercial, mixta), accesos y características físicas más relevantes..." maxlength="600" required></textarea>
+        <div class="char-counter" id="cc-sector">0 / 600</div>
+        <div class="val-msg" id="val-sector">La descripción del sector es obligatoria.</div>
+      </div>
+
+      <div class="field">
+        <label>Tipo de zona <span class="req">*</span></label>
+        <div class="opts h">
+          <label class="opt-item"><input type="radio" name="tipo-zona"> Residencial</label>
+          <label class="opt-item"><input type="radio" name="tipo-zona"> Comercial</label>
+          <label class="opt-item"><input type="radio" name="tipo-zona"> Mixta (residencial + comercial)</label>
+          <label class="opt-item"><input type="radio" name="tipo-zona"> Industrial</label>
+          <label class="opt-item"><input type="radio" name="tipo-zona"> Periférica / Barrio de invasión</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Densidad poblacional estimada del sector</label>
+        <div class="opts h">
+          <label class="opt-item"><input type="radio" name="densidad"> Alta — muchas viviendas y personas</label>
+          <label class="opt-item"><input type="radio" name="densidad"> Media</label>
+          <label class="opt-item"><input type="radio" name="densidad"> Baja — zona dispersa o semirural</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿El sector ha sido intervenido institucionalmente antes por problemas similares?</label>
+        <div class="opts h">
+          <label class="opt-item"><input type="radio" name="interv-prev"> Sí — con resultados positivos</label>
+          <label class="opt-item"><input type="radio" name="interv-prev"> Sí — sin resultados significativos</label>
+          <label class="opt-item"><input type="radio" name="interv-prev"> Sí — con resultados temporales</label>
+          <label class="opt-item"><input type="radio" name="interv-prev"> No — primera intervención</label>
+          <label class="opt-item"><input type="radio" name="interv-prev"> Se desconoce</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Si fue intervenido antes, ¿qué entidad lo hizo y qué se realizó?</label>
+        <textarea id="interv-prev-desc" placeholder="Describa brevemente: quién intervino, cuándo, qué se hizo y qué resultado tuvo en el largo plazo..." maxlength="400"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Fenómenos críticos presentes en el sector <span class="req">*</span> <span class="hint">(seleccione todos los que se identificaron en el territorio)</span></label>
+        <div class="chips">
+          <label class="chip c-bas"><input type="checkbox" id="fen-bas"> 🗑️ Basuras e Higiene Urbana</label>
+          <label class="chip c-inf"><input type="checkbox" id="fen-inf"> 🏪 Informalidad Urbana</label>
+          <label class="chip c-tra"><input type="checkbox" id="fen-tra"> 🚌 Transporte Público</label>
+          <label class="chip c-ife"><input type="checkbox" id="fen-ife"> 🏚️ Infraestructura Deteriorada</label>
+          <label class="chip c-seg"><input type="checkbox" id="fen-seg"> 🔦 Falta de Seguridad / Iluminación</label>
+        </div>
+        <div class="val-msg" id="val-fenomenos">Seleccione al menos un fenómeno presente en el sector.</div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(1)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(1)">Siguiente — Fenómenos Críticos →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ SEC 3 — FENÓMENOS CRÍTICOS ══════ -->
+  <div class="section" id="sec-2">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-amb">⚠️</div>
+        <div>
+          <div class="card-sec-lbl">Sección 3 de 6</div>
+          <div class="card-title">Análisis de Fenómenos Críticos</div>
+        </div>
+      </div>
+
+      <div class="info-box amb">
+        <span class="ico">🔍</span>
+        <p>Analice cada fenómeno identificado en el sector. Para los que NO están presentes puede omitirlos. Haga clic en cada bloque para expandirlo y diligenciar sus campos.</p>
+      </div>
+
+      <!-- F1 — BASURAS -->
+      <div class="feno-block fb-bas">
+        <div class="feno-hdr bas" onclick="toggleFeno(this)">
+          <div class="feno-ico">🗑️</div>
+          <div class="feno-hdr-txt">
+            <div class="feno-num bas">Fenómeno 1</div>
+            <div class="feno-name">Basuras e Higiene Urbana</div>
+          </div>
+          <div class="feno-toggle open">▼</div>
+        </div>
+        <div class="feno-body open">
+          <div class="field">
+            <label>¿Existen puntos críticos de acumulación de basuras en el sector?</label>
+            <div class="opts h">
+              <label class="opt-item"><input type="radio" name="bas-presencia"> Sí — puntos crónicos identificados</label>
+              <label class="opt-item"><input type="radio" name="bas-presencia"> Sí — puntual o estacional</label>
+              <label class="opt-item"><input type="radio" name="bas-presencia"> No</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Frecuencia percibida de recolección de basuras</label>
+            <div class="opts">
+              <label class="opt-item"><input type="radio" name="bas-frec"> Adecuada — regular y suficiente</label>
+              <label class="opt-item"><input type="radio" name="bas-frec"> Irregular — falla con frecuencia</label>
+              <label class="opt-item"><input type="radio" name="bas-frec"> Insuficiente — no cubre la demanda del sector</label>
+              <label class="opt-item"><input type="radio" name="bas-frec"> No hay — el sector no tiene servicio de recolección</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Tipo de problemática de basuras <span class="hint">(seleccione todos los que apliquen)</span></label>
+            <div class="chips">
+              <label class="chip c-bas"><input type="checkbox"> Puntos de disposición ilegal ("botaderos")</label>
+              <label class="chip c-bas"><input type="checkbox"> Quema de residuos a cielo abierto</label>
+              <label class="chip c-bas"><input type="checkbox"> Acumulación en canales o drenajes</label>
+              <label class="chip c-bas"><input type="checkbox"> Sin canecas o infraestructura de aseo</label>
+              <label class="chip c-bas"><input type="checkbox"> Residuos de actividades comerciales informales</label>
+              <label class="chip c-bas"><input type="checkbox"> Escombros y residuos de construcción</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Impacto del fenómeno sobre la convivencia y la seguridad</label>
+            <textarea id="bas-impacto" placeholder="Describa cómo la acumulación de basuras afecta la convivencia, la percepción de seguridad y el uso del espacio público en el sector..." maxlength="500"></textarea>
+            <div class="char-counter" id="cc-bas">0 / 500</div>
+          </div>
+          <div class="field">
+            <label>Nivel de urgencia de intervención</label>
+            <div class="nivel-opts">
+              <label class="nivel-opt alto"><input type="radio" name="bas-urg"> 🔴 ALTO<br><small>Puntos crónicos con riesgo sanitario y de convivencia</small></label>
+              <label class="nivel-opt medio"><input type="radio" name="bas-urg"> 🟡 MEDIO<br><small>Problema recurrente pero manejable</small></label>
+              <label class="nivel-opt bajo"><input type="radio" name="bas-urg"> 🟢 BAJO<br><small>Situación puntual o leve</small></label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Entidad responsable de intervención recomendada</label>
+            <div class="chips">
+              <label class="chip c-amb"><input type="checkbox"> Triple A (Aseo)</label>
+              <label class="chip c-stl"><input type="checkbox"> Alcaldía Local</label>
+              <label class="chip c-seg"><input type="checkbox"> Secretaría de Espacio Público</label>
+              <label class="chip c-tra"><input type="checkbox"> Comunidad / JAC</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- F2 — INFORMALIDAD -->
+      <div class="feno-block fb-inf">
+        <div class="feno-hdr inf" onclick="toggleFeno(this)">
+          <div class="feno-ico">🏪</div>
+          <div class="feno-hdr-txt">
+            <div class="feno-num inf">Fenómeno 2</div>
+            <div class="feno-name">Informalidad Urbana</div>
+          </div>
+          <div class="feno-toggle">▼</div>
+        </div>
+        <div class="feno-body">
+          <div class="field">
+            <label>Tipo de informalidad presente en el sector <span class="hint">(seleccione todos los que apliquen)</span></label>
+            <div class="chips">
+              <label class="chip c-inf"><input type="checkbox"> Vendedores ambulantes en espacio público</label>
+              <label class="chip c-inf"><input type="checkbox"> Comercio estacionario sin regulación</label>
+              <label class="chip c-inf"><input type="checkbox"> Asentamientos o construcciones irregulares</label>
+              <label class="chip c-inf"><input type="checkbox"> Garajes o talleres en espacio público</label>
+              <label class="chip c-inf"><input type="checkbox"> Parqueaderos informales en vías</label>
+              <label class="chip c-inf"><input type="checkbox"> Actividades económicas sin permiso en zonas residenciales</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>¿La informalidad genera conflictos de convivencia?</label>
+            <div class="opts h">
+              <label class="opt-item"><input type="radio" name="inf-conflicto"> Sí — conflictos frecuentes</label>
+              <label class="opt-item"><input type="radio" name="inf-conflicto"> Ocasionalmente</label>
+              <label class="opt-item"><input type="radio" name="inf-conflicto"> No — coexistencia pacífica</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Descripción de la informalidad y su impacto en la convivencia</label>
+            <textarea id="inf-desc" placeholder="Describa: tipo de actividad informal, ubicación en el sector, conflictos que genera, impacto en espacio peatonal, percepción ciudadana y antecedentes de intervención..." maxlength="500"></textarea>
+            <div class="char-counter" id="cc-inf">0 / 500</div>
+          </div>
+          <div class="field">
+            <label>Nivel de urgencia de intervención</label>
+            <div class="nivel-opts">
+              <label class="nivel-opt alto"><input type="radio" name="inf-urg"> 🔴 ALTO</label>
+              <label class="nivel-opt medio"><input type="radio" name="inf-urg"> 🟡 MEDIO</label>
+              <label class="nivel-opt bajo"><input type="radio" name="inf-urg"> 🟢 BAJO</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- F3 — TRANSPORTE -->
+      <div class="feno-block fb-tra">
+        <div class="feno-hdr tra" onclick="toggleFeno(this)">
+          <div class="feno-ico">🚌</div>
+          <div class="feno-hdr-txt">
+            <div class="feno-num tra">Fenómeno 3</div>
+            <div class="feno-name">Transporte Público</div>
+          </div>
+          <div class="feno-toggle">▼</div>
+        </div>
+        <div class="feno-body">
+          <div class="field">
+            <label>Problemáticas de transporte identificadas <span class="hint">(seleccione todas las que apliquen)</span></label>
+            <div class="chips">
+              <label class="chip c-tra"><input type="checkbox"> Déficit de rutas — el sector no tiene cobertura suficiente</label>
+              <label class="chip c-tra"><input type="checkbox"> Paraderos inseguros o deteriorados</label>
+              <label class="chip c-tra"><input type="checkbox"> Transporte informal (mototaxis, vehículos no autorizados)</label>
+              <label class="chip c-tra"><input type="checkbox"> Vías deterioradas que impiden el acceso del transporte</label>
+              <label class="chip c-tra"><input type="checkbox"> Aglomeraciones en puntos de alta demanda</label>
+              <label class="chip c-tra"><input type="checkbox"> Conflictos de convivencia en paraderos o rutas</label>
+              <label class="chip c-tra"><input type="checkbox"> Inseguridad en el transporte (atracos, acoso)</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Descripción del problema de transporte y su impacto en la convivencia</label>
+            <textarea id="tra-desc" placeholder="Describa las problemáticas de movilidad del sector, cómo afectan la seguridad de los ciudadanos y qué puntos generan mayor conflictividad..." maxlength="500"></textarea>
+            <div class="char-counter" id="cc-tra">0 / 500</div>
+          </div>
+          <div class="field">
+            <label>Nivel de urgencia de intervención</label>
+            <div class="nivel-opts">
+              <label class="nivel-opt alto"><input type="radio" name="tra-urg"> 🔴 ALTO</label>
+              <label class="nivel-opt medio"><input type="radio" name="tra-urg"> 🟡 MEDIO</label>
+              <label class="nivel-opt bajo"><input type="radio" name="tra-urg"> 🟢 BAJO</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- F4 — INFRAESTRUCTURA -->
+      <div class="feno-block fb-ife">
+        <div class="feno-hdr ife" onclick="toggleFeno(this)">
+          <div class="feno-ico">🏚️</div>
+          <div class="feno-hdr-txt">
+            <div class="feno-num ife">Fenómeno 4</div>
+            <div class="feno-name">Infraestructura Deteriorada</div>
+          </div>
+          <div class="feno-toggle">▼</div>
+        </div>
+        <div class="feno-body">
+          <div class="field">
+            <label>Tipo de deterioro de infraestructura presente <span class="hint">(seleccione todos los que apliquen)</span></label>
+            <div class="chips">
+              <label class="chip c-ife"><input type="checkbox"> 🛣️ Vías y calzadas deterioradas</label>
+              <label class="chip c-ife"><input type="checkbox"> 🚶 Andenes rotos u obstruidos</label>
+              <label class="chip c-ife"><input type="checkbox"> 🏚️ Lotes baldíos o viviendas abandonadas</label>
+              <label class="chip c-ife"><input type="checkbox"> 🧱 Fachadas deterioradas o muros con graffiti</label>
+              <label class="chip c-ife"><input type="checkbox"> 🌊 Canales o drenajes obstruidos / deteriorados</label>
+              <label class="chip c-ife"><input type="checkbox"> 🌉 Puentes o pasos peatonales deteriorados</label>
+              <label class="chip c-ife"><input type="checkbox"> 🪑 Amoblamiento urbano dañado o inexistente</label>
+              <label class="chip c-ife"><input type="checkbox"> ⚽ Canchas o espacios deportivos deteriorados</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Descripción del deterioro y su impacto en la seguridad y convivencia</label>
+            <textarea id="ife-desc" placeholder="Detalle los hallazgos: ubicación exacta, extensión del deterioro, tiempo estimado de abandono, riesgo que genera para peatones o residentes, percepción ciudadana sobre el abandono institucional..." maxlength="600"></textarea>
+            <div class="char-counter" id="cc-ife">0 / 600</div>
+          </div>
+          <div class="field">
+            <label>Nivel de urgencia de intervención</label>
+            <div class="nivel-opts">
+              <label class="nivel-opt alto"><input type="radio" name="ife-urg"> 🔴 ALTO<br><small>Deterioro grave con riesgo físico o de inseguridad</small></label>
+              <label class="nivel-opt medio"><input type="radio" name="ife-urg"> 🟡 MEDIO<br><small>Deterioro visible, no genera riesgo inmediato</small></label>
+              <label class="nivel-opt bajo"><input type="radio" name="ife-urg"> 🟢 BAJO<br><small>Deterioro leve o estético</small></label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Acción recomendada</label>
+            <div class="opts">
+              <label class="opt-item"><input type="radio" name="ife-accion"> Reparación o mantenimiento de lo existente</label>
+              <label class="opt-item"><input type="radio" name="ife-accion"> Reemplazo total de estructuras dañadas</label>
+              <label class="opt-item"><input type="radio" name="ife-accion"> Recuperación de lote o espacio abandonado</label>
+              <label class="opt-item"><input type="radio" name="ife-accion"> Instalación de amoblamiento nuevo</label>
+              <label class="opt-item"><input type="radio" name="ife-accion"> Articulación interinstitucional para definir el tipo de intervención</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- F5 — SEGURIDAD / ILUMINACIÓN -->
+      <div class="feno-block fb-seg">
+        <div class="feno-hdr seg" onclick="toggleFeno(this)">
+          <div class="feno-ico">🔦</div>
+          <div class="feno-hdr-txt">
+            <div class="feno-num seg">Fenómeno 5</div>
+            <div class="feno-name">Falta de Seguridad e Iluminación</div>
+          </div>
+          <div class="feno-toggle">▼</div>
+        </div>
+        <div class="feno-body">
+          <div class="field">
+            <label>Estado del alumbrado público en el sector <span class="req">*</span></label>
+            <div class="opts">
+              <label class="opt-item"><input type="radio" name="seg-ilum"> Bueno — cobertura completa y funcional</label>
+              <label class="opt-item"><input type="radio" name="seg-ilum"> Regular — algunos focos apagados o con fallas</label>
+              <label class="opt-item"><input type="radio" name="seg-ilum"> Deficiente — más del 30% de los focos no funcionan</label>
+              <label class="opt-item"><input type="radio" name="seg-ilum"> Ausente — no existe alumbrado público en el sector</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>¿Existen zonas oscuras críticas que generan inseguridad?</label>
+            <div class="opts h">
+              <label class="opt-item"><input type="radio" name="seg-zonas"> Sí — con incidentes conocidos</label>
+              <label class="opt-item"><input type="radio" name="seg-zonas"> Sí — sin incidentes confirmados pero con percepción de riesgo</label>
+              <label class="opt-item"><input type="radio" name="seg-zonas"> No</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Descripción de las zonas oscuras y problemáticas de seguridad asociadas</label>
+            <textarea id="seg-desc" placeholder="Detalle: calles, callejones, parques o corredores sin iluminación, incidentes reportados por la comunidad, horarios de mayor riesgo, relación entre oscuridad y delitos o conflictos en el sector..." maxlength="600"></textarea>
+            <div class="char-counter" id="cc-seg">0 / 600</div>
+          </div>
+          <div class="field">
+            <label>Percepción de seguridad general en el sector</label>
+            <div class="opts">
+              <label class="opt-item"><input type="radio" name="seg-percep"> Muy inseguro — la comunidad expresa temor cotidiano</label>
+              <label class="opt-item"><input type="radio" name="seg-percep"> Inseguro — hay problemáticas percibidas con frecuencia</label>
+              <label class="opt-item"><input type="radio" name="seg-percep"> Regular — situación mixta según zona y horario</label>
+              <label class="opt-item"><input type="radio" name="seg-percep"> Relativamente seguro — problemáticas puntuales o de baja frecuencia</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Nivel de urgencia de intervención en iluminación</label>
+            <div class="nivel-opts">
+              <label class="nivel-opt alto"><input type="radio" name="seg-urg"> 🔴 ALTO<br><small>Zonas oscuras con delitos conocidos o NNA en entorno</small></label>
+              <label class="nivel-opt medio"><input type="radio" name="seg-urg"> 🟡 MEDIO<br><small>Deterioro visible sin incidentes recientes confirmados</small></label>
+              <label class="nivel-opt bajo"><input type="radio" name="seg-urg"> 🟢 BAJO<br><small>Uno o dos focos dañados, baja afluencia nocturna</small></label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(2)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(2)">Siguiente — Cartografía Social →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ SEC 4 — CARTOGRAFÍA SOCIAL ══════ -->
+  <div class="section" id="sec-3">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-stl">🗺️</div>
+        <div>
+          <div class="card-sec-lbl">Sección 4 de 6</div>
+          <div class="card-title">Cartografía Social Participativa</div>
+        </div>
+      </div>
+
+      <div class="info-box stl">
+        <span class="ico">👥</span>
+        <p>Esta sección documenta los resultados del taller participativo de cartografía. La comunidad, los líderes y las entidades construyeron colectivamente el mapa del sector. Registre los hallazgos más relevantes de esa construcción conjunta.</p>
+      </div>
+
+      <div class="sub-hdr">📍 Zonas Críticas Identificadas Colectivamente</div>
+      <div class="field">
+        <label>Descripción de las zonas más críticas identificadas en el taller <span class="req">*</span> <span class="hint">(máx. 700 caracteres)</span></label>
+        <textarea id="zonas-criticas" placeholder="Describa las zonas que la comunidad identificó como más problemáticas: calles, esquinas, parques, corredores. Sea específico con las referencias (calles, carreras, nombres de puntos de referencia)..." maxlength="700" required></textarea>
+        <div class="char-counter" id="cc-zonas">0 / 700</div>
+        <div class="val-msg" id="val-zonas">Describa las zonas críticas identificadas.</div>
+      </div>
+
+      <div class="field">
+        <label>¿Se elaboró un mapa físico o digital durante el taller?</label>
+        <div class="opts h">
+          <label class="opt-item"><input type="radio" name="mapa-elaborado"> Sí — mapa físico en papel / tablero</label>
+          <label class="opt-item"><input type="radio" name="mapa-elaborado"> Sí — mapa digital (Google Maps u otro)</label>
+          <label class="opt-item"><input type="radio" name="mapa-elaborado"> Ambos formatos</label>
+          <label class="opt-item"><input type="radio" name="mapa-elaborado"> No se elaboró mapa — solo descripción verbal</label>
+        </div>
+      </div>
+
+      <div class="sub-hdr">💬 Voces de la Comunidad</div>
+      <div class="field">
+        <label>¿Cuáles son las principales quejas y demandas de la comunidad sobre el territorio? <span class="hint">(máx. 700 caracteres)</span></label>
+        <textarea id="voces-com" placeholder="Registre lo que la comunidad expresó durante el taller: qué les molesta más, qué sienten que ha sido abandonado, qué cambios piden con mayor urgencia. Use las palabras de los participantes cuando sea posible..." maxlength="700"></textarea>
+        <div class="char-counter" id="cc-voces">0 / 700</div>
+      </div>
+
+      <div class="field">
+        <label>Propuesta de la comunidad para transformar el sector <span class="hint">(máx. 600 caracteres)</span></label>
+        <textarea id="propuesta-com" placeholder="¿Qué propone la comunidad? Qué se debería hacer, dónde, cómo y con qué entidades. Esta información es fundamental para las recomendaciones técnicas..." maxlength="600"></textarea>
+        <div class="char-counter" id="cc-propuesta">0 / 600</div>
+      </div>
+
+      <div class="sub-hdr">🎯 Priorización Participativa</div>
+      <div class="field">
+        <label>¿Cuál es el fenómeno que la comunidad considera más urgente de intervenir?</label>
+        <div class="opts">
+          <label class="opt-item"><input type="radio" name="pri-feno"> 🗑️ Basuras e Higiene Urbana</label>
+          <label class="opt-item"><input type="radio" name="pri-feno"> 🏪 Informalidad Urbana</label>
+          <label class="opt-item"><input type="radio" name="pri-feno"> 🚌 Transporte Público</label>
+          <label class="opt-item"><input type="radio" name="pri-feno"> 🏚️ Infraestructura Deteriorada</label>
+          <label class="opt-item"><input type="radio" name="pri-feno"> 🔦 Falta de Seguridad / Iluminación</label>
+          <label class="opt-item"><input type="radio" name="pri-feno"> Todos por igual — no hay prioridad clara</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿La comunidad señaló espacios públicos específicos para recuperación?</label>
+        <div class="opts h">
+          <label class="opt-item"><input type="radio" name="esp-pub-rec"> Sí</label>
+          <label class="opt-item"><input type="radio" name="esp-pub-rec"> No</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>¿Cuáles espacios públicos señaló la comunidad para recuperación? <span class="hint">(si aplica)</span></label>
+        <textarea id="espacios-rec" placeholder="Nombre del espacio, ubicación, estado actual y por qué la comunidad lo considera prioritario para recuperar..." maxlength="500"></textarea>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(3)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(3)">Siguiente — Actores y Brechas →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ SEC 5 — ACTORES Y BRECHAS ══════ -->
+  <div class="section" id="sec-4">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-ife">🤝</div>
+        <div>
+          <div class="card-sec-lbl">Sección 5 de 6</div>
+          <div class="card-title">Actores Institucionales y Brechas de Intervención</div>
+        </div>
+      </div>
+
+      <div class="sub-hdr">🏛️ Entidades Presentes en el Taller</div>
+      <div class="field">
+        <label>¿Qué entidades participaron en el taller de cartografía? <span class="hint">(seleccione todas las que asistieron)</span></label>
+        <div class="chips">
+          <label class="chip c-amb"><input type="checkbox"> OSCC</label>
+          <label class="chip c-stl"><input type="checkbox"> Policía Nacional</label>
+          <label class="chip c-seg"><input type="checkbox"> Alcaldía Local</label>
+          <label class="chip c-ife"><input type="checkbox"> Secretaría de Infraestructura</label>
+          <label class="chip c-inf"><input type="checkbox"> Secretaría de Espacio Público</label>
+          <label class="chip c-tra"><input type="checkbox"> Planeación Distrital</label>
+          <label class="chip c-bas"><input type="checkbox"> Triple A (Aseo)</label>
+          <label class="chip c-stl"><input type="checkbox"> Air-e / ELECTRICARIBE</label>
+          <label class="chip c-inf"><input type="checkbox"> Transmetro / Movilidad</label>
+          <label class="chip c-seg"><input type="checkbox"> MEBAR</label>
+          <label class="chip c-amb"><input type="checkbox"> JAC y líderes comunitarios</label>
+        </div>
+      </div>
+
+      <div class="sub-hdr">⚡ Brechas Institucionales Identificadas</div>
+      <div class="field">
+        <label>¿Qué entidades o servicios están ausentes o son insuficientes en el territorio? <span class="hint">(seleccione todos los que apliquen)</span></label>
+        <div class="chips">
+          <label class="chip c-bas"><input type="checkbox"> Sin mantenimiento de infraestructura vial</label>
+          <label class="chip c-stl"><input type="checkbox"> Sin mejoramiento de alumbrado público</label>
+          <label class="chip c-seg"><input type="checkbox"> Sin recuperación de espacio público</label>
+          <label class="chip c-inf"><input type="checkbox"> Sin regulación del comercio informal</label>
+          <label class="chip c-tra"><input type="checkbox"> Sin mejora de transporte / rutas insuficientes</label>
+          <label class="chip c-ife"><input type="checkbox"> Sin atención a lotes baldíos / viviendas en riesgo</label>
+          <label class="chip c-amb"><input type="checkbox"> Sin recolección de basuras regular</label>
+          <label class="chip c-stl"><input type="checkbox"> Sin presencia permanente de Policía en el sector</label>
+          <label class="chip c-seg"><input type="checkbox"> Sin programas de participación comunitaria activos</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Descripción de las principales brechas de intervención institucional</label>
+        <textarea id="brechas-desc" placeholder="Describa qué necesita el sector que actualmente no tiene, qué entidades deberían actuar y no lo están haciendo, y cuánto tiempo llevan estos problemas sin atención..." maxlength="600"></textarea>
+        <div class="char-counter" id="cc-brechas">0 / 600</div>
+      </div>
+
+      <div class="sub-hdr">📋 Compromisos Adquiridos en el Taller</div>
+      <div class="field">
+        <label>¿Las entidades presentes adquirieron compromisos de intervención durante el taller?</label>
+        <div class="opts h">
+          <label class="opt-item"><input type="radio" name="compromisos"> Sí — compromisos concretos con fecha</label>
+          <label class="opt-item"><input type="radio" name="compromisos"> Sí — compromisos generales sin fecha definida</label>
+          <label class="opt-item"><input type="radio" name="compromisos"> No — sin compromisos formalizados</label>
+        </div>
+      </div>
+      <div class="field">
+        <label>Detalle de los compromisos adquiridos <span class="hint">(entidad, acción y fecha si la tiene)</span></label>
+        <textarea id="compromisos-desc" placeholder="Ej: Triple A se comprometió a instalar 3 canecas en la esquina de la Cra 42 con Clle 28 en un plazo de 2 semanas. Air-e revisará los 4 postes apagados en el tramo entre Calles 30 y 32..." maxlength="600"></textarea>
+        <div class="char-counter" id="cc-compromisos">0 / 600</div>
+      </div>
+
+      <div class="nav-btns">
+        <button class="btn btn-prev" onclick="anterior(4)">← Anterior</button>
+        <button class="btn btn-next" onclick="siguiente(4)">Siguiente — Recomendaciones →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ SEC 6 — RECOMENDACIONES Y CIERRE ══════ -->
+  <div class="section" id="sec-5">
+    <div class="card">
+      <div class="card-hdr">
+        <div class="card-ico ico-ver">✅</div>
+        <div>
+          <div class="card-sec-lbl">Sección 6 de 6</div>
+          <div class="card-title">Recomendaciones Técnicas, Fotografías y Envío</div>
+        </div>
+      </div>
+
+      <div class="sub-hdr">📸 Registro Fotográfico</div>
+      <div class="info-box amb">
+        <span class="ico">📷</span>
+        <p>Adjunte mínimo <strong>3 fotografías</strong> del sector: contexto general, hallazgo más crítico y estado de infraestructura o espacio público. Tome las fotos durante el recorrido, no desde el salón.</p>
+      </div>
+      <div class="photo-zone" onclick="document.getElementById('file-input').click()">
+        <div class="photo-zone-ico">📸</div>
+        <p><strong>Toque aquí para adjuntar fotografías del sector</strong><br>Formatos: JPG, PNG · Máximo 10 fotos · Mínimo 3 requeridas</p>
+        <input type="file" id="file-input" accept="image/*" multiple onchange="previsualizarFotos(event)" style="display:none;">
+      </div>
+      <div class="photo-preview" id="photo-preview"></div>
+
+      <hr class="field-sep">
+      <div class="sub-hdr">🔧 Recomendaciones Técnicas del Levantamiento</div>
+
+      <div class="field">
+        <label>Hora de finalización del taller / recorrido <span class="req">*</span></label>
+        <input type="time" id="hora-fin" required style="max-width:200px;">
+      </div>
+
+      <div class="field">
+        <label>Recomendaciones técnicas para recuperación de espacio público <span class="hint">(máx. 600 caracteres)</span></label>
+        <textarea id="rec-espacio" placeholder="Describa qué espacios públicos deberían recuperarse, qué tipo de intervención se recomienda, cuál es la prioridad y qué entidad debería ejecutarla..." maxlength="600"></textarea>
+        <div class="char-counter" id="cc-espacio">0 / 600</div>
+      </div>
+
+      <div class="field">
+        <label>Recomendaciones técnicas para mejoramiento de infraestructura urbana <span class="hint">(máx. 600 caracteres)</span></label>
+        <textarea id="rec-infraestr" placeholder="Describe qué vías, andenes, canales, lotes o estructuras requieren intervención, el tipo de obra recomendada, la urgencia y la entidad competente..." maxlength="600"></textarea>
+        <div class="char-counter" id="cc-rec-inf">0 / 600</div>
+      </div>
+
+      <div class="field">
+        <label>Recomendaciones técnicas para mejoramiento de iluminación <span class="hint">(máx. 500 caracteres)</span></label>
+        <textarea id="rec-iluminacion" placeholder="Indique las zonas sin luz, el número aproximado de puntos a intervenir, la prioridad de cada uno y la coordinación sugerida con Air-e / ELECTRICARIBE o la entidad competente..." maxlength="500"></textarea>
+        <div class="char-counter" id="cc-rec-ilum">0 / 500</div>
+      </div>
+
+      <div class="field">
+        <label>Conclusión general del levantamiento <span class="req">*</span> <span class="hint">(máx. 900 caracteres — resuma los hallazgos más críticos)</span></label>
+        <textarea id="conclusion" placeholder="Resuma: los 3 o 4 fenómenos más urgentes del sector, las acciones prioritarias que recomienda activar de inmediato, los compromisos adquiridos en el taller y el nivel de prioridad general del sector para intervención..." maxlength="900" required></textarea>
+        <div class="char-counter" id="cc-conclusion">0 / 900</div>
+        <div class="val-msg" id="val-conclusion">La conclusión del levantamiento es obligatoria.</div>
+      </div>
+
+      <div class="sub-hdr">🚀 Acciones Interinstitucionales Recomendadas</div>
+      <div class="field">
+        <label>Seleccione todas las acciones que deben activarse tras este levantamiento</label>
+        <div class="opts">
+          <label class="opt-item"><input type="checkbox"> Alerta a Secretaría de Infraestructura por deterioro de vías o andenes</label>
+          <label class="opt-item"><input type="checkbox"> Reporte a Secretaría de Espacio Público por recuperación de zonas</label>
+          <label class="opt-item"><input type="checkbox"> Alerta a Air-e / ELECTRICARIBE por zonas sin iluminación</label>
+          <label class="opt-item"><input type="checkbox"> Reporte a Triple A por puntos críticos de basuras</label>
+          <label class="opt-item"><input type="checkbox"> Coordinación con Transmetro / Movilidad por problemáticas de transporte</label>
+          <label class="opt-item"><input type="checkbox"> Inclusión en próxima mesa del Consejo de Seguridad del OSCC</label>
+          <label class="opt-item"><input type="checkbox"> Solicitud de intervención a Alcaldía Local para informalidad en espacio público</label>
+          <label class="opt-item"><input type="checkbox"> Coordinación con Planeación Distrital para articulación con POT</label>
+          <label class="opt-item"><input type="checkbox"> Sin acción inmediata requerida — seguimiento en próximo ciclo</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>¿Este sector debe incluirse en el próximo recorrido de seguimiento? <span class="req">*</span></label>
+        <div class="opts h">
+          <label class="opt-item"><input type="radio" name="seguimiento"> Sí — seguimiento urgente (< 2 semanas)</label>
+          <label class="opt-item"><input type="radio" name="seguimiento"> Sí — próximo ciclo mensual</label>
+          <label class="opt-item"><input type="radio" name="seguimiento"> Sí — ciclo trimestral</label>
+          <label class="opt-item"><input type="radio" name="seguimiento"> No requiere seguimiento prioritario</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Firma del responsable del levantamiento</label>
+        <input type="text" id="firma" placeholder="Escriba su nombre completo como firma de la ficha">
+      </div>
+
+      <div class="info-box ver" style="margin-top:20px;">
+        <span class="ico">🔄</span>
+        <p>Al enviar esta ficha, la información se dirigirá al <strong>Centro de Control de Información Territorial del OSCC</strong> y alimentará el tablero Power BI del Programa P4. Las recomendaciones con urgencia ALTA activarán protocolo de gestión interinstitucional en las siguientes <strong>24–48 horas</strong>.</p>
+      </div>
+
+      <div class="nav-btns">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="btn btn-prev" onclick="anterior(5)">← Anterior</button>
+          <button class="btn btn-draft btn" onclick="guardarBorrador()">💾 Guardar borrador</button>
+        </div>
+        <button class="btn btn-submit" onclick="enviarFicha()">🏗️ Enviar Ficha P4</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUCCESS -->
+  <div class="success-screen" id="success">
+    <div class="success-ico">🏗️</div>
+    <h2>¡Ficha P4 enviada!</h2>
+    <p>La cartografía social ha sido registrada exitosamente en el Centro de Control de Información Territorial del OSCC. El equipo técnico revisará las recomendaciones y activará los protocolos de gestión interinstitucional.</p>
+    <div class="success-code" id="success-code">P4-XXX-0001</div>
+    <p style="margin-bottom:20px;font-size:.85em;color:var(--ink3);">Guarde este código como referencia del levantamiento de cartografía.</p>
+    <button class="btn-new-form" onclick="nuevaFicha()">+ Nueva ficha</button>
+    <button class="btn-print" onclick="window.print()">🖨️ Imprimir registro</button>
+  </div>
+
+</div><!-- /wrapper -->
+
+<script>
+let currentSection = 0;
+const totalSections = 6;
+
+function updateProgress(sec) {
+  const pct = Math.round((sec / totalSections) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('pct').textContent = pct + '%';
+  document.querySelectorAll('.ps').forEach((el, i) => {
+    el.classList.remove('active','done');
+    if (i === sec) el.classList.add('active');
+    else if (i < sec) el.classList.add('done');
+  });
+}
+function goTo(sec) {
+  document.getElementById('sec-' + currentSection).classList.remove('visible');
+  currentSection = sec;
+  document.getElementById('sec-' + currentSection).classList.add('visible');
+  updateProgress(sec); window.scrollTo({top:0,behavior:'smooth'});
+}
+function siguiente(sec) { if (!validar(sec)) return; goTo(sec + 1); }
+function anterior(sec)  { goTo(sec - 1); }
+
+function validar(sec) {
+  let ok = true;
+  if (sec === 0) {
+    ['fecha','localidad','barrio','resp-nombre'].forEach(id => {
+      const el = document.getElementById(id);
+      const vId = 'val-' + (id === 'resp-nombre' ? 'resp' : id);
+      const v = document.getElementById(vId);
+      if (!el || !el.value.trim()) { if(el) el.classList.add('error'); if(v) v.classList.add('visible'); ok = false; }
+      else { el.classList.remove('error'); if(v) v.classList.remove('visible'); }
+    });
+  }
+  if (sec === 1) {
+    const ds = document.getElementById('desc-sector');
+    const vs = document.getElementById('val-sector');
+    if (!ds.value.trim()) { ds.classList.add('error'); vs.classList.add('visible'); ok = false; }
+    else { ds.classList.remove('error'); vs.classList.remove('visible'); }
+    const anyFen = document.querySelectorAll('#sec-1 .chip.sel').length > 0;
+    const vf = document.getElementById('val-fenomenos');
+    if (!anyFen) { vf.classList.add('visible'); ok = false; } else vf.classList.remove('visible');
+  }
+  if (sec === 3) {
+    const zc = document.getElementById('zonas-criticas');
+    const vz = document.getElementById('val-zonas');
+    if (!zc.value.trim()) { zc.classList.add('error'); vz.classList.add('visible'); ok = false; }
+    else { zc.classList.remove('error'); vz.classList.remove('visible'); }
+  }
+  if (sec === 5) {
+    const conc = document.getElementById('conclusion');
+    const vc = document.getElementById('val-conclusion');
+    if (!conc.value.trim()) { conc.classList.add('error'); vc.classList.add('visible'); ok = false; }
+    else { conc.classList.remove('error'); vc.classList.remove('visible'); }
+  }
+  return ok;
+}
+
+function generarCodigo() {
+  const loc = document.getElementById('localidad').value;
+  const fecha = document.getElementById('fecha').value;
+  if (loc && fecha) {
+    const f = fecha.replace(/-/g,'');
+    const n = String(Math.floor(Math.random()*900)+100);
+    document.getElementById('codigo').value = 'P4-' + loc + '-' + f + '-' + n;
+  }
+}
+document.getElementById('fecha').addEventListener('change', generarCodigo);
+
+function capturarGPS() {
+  const btn = document.getElementById('btn-gps'), st = document.getElementById('gps-status');
+  btn.textContent = '⏳ Obteniendo...'; st.className = 'gps-status';
+  if (!navigator.geolocation) { st.className='gps-status err'; st.textContent='⚠ GPS no disponible.'; btn.textContent='📡 GPS'; return; }
+  navigator.geolocation.getCurrentPosition(pos => {
+    document.getElementById('lat').value = pos.coords.latitude.toFixed(6);
+    document.getElementById('lng').value = pos.coords.longitude.toFixed(6);
+    btn.innerHTML = '✅ GPS Capturado';
+    st.className = 'gps-status ok';
+    st.textContent = '✓ Coordenadas capturadas — Precisión: ' + Math.round(pos.coords.accuracy) + ' m';
+  }, () => {
+    btn.textContent = '📡 Reintentar GPS'; st.className = 'gps-status err';
+    st.textContent = '⚠ No se pudo obtener la ubicación. Active el GPS e intente de nuevo.';
+  }, {enableHighAccuracy:true,timeout:12000});
+}
+
+function toggleFeno(hdr) {
+  const toggle = hdr.querySelector('.feno-toggle');
+  const body = hdr.nextElementSibling;
+  const open = body.classList.contains('open');
+  body.classList.toggle('open', !open);
+  toggle.classList.toggle('open', !open);
+}
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', function() {
+    this.classList.toggle('sel');
+    const cb = this.querySelector('input[type="checkbox"]');
+    if (cb) cb.checked = !cb.checked;
+  });
+});
+
+document.querySelectorAll('.opt-item input[type="radio"]').forEach(r => {
+  r.addEventListener('change', function() {
+    document.querySelectorAll('input[name="' + this.name + '"]').forEach(x => x.closest('.opt-item').classList.remove('selected'));
+    this.closest('.opt-item').classList.add('selected');
+  });
+});
+
+document.querySelectorAll('.nivel-opt').forEach(opt => {
+  opt.addEventListener('click', function() {
+    const name = this.querySelector('input').name;
+    document.querySelectorAll('input[name="' + name + '"]').forEach(x => x.closest('.nivel-opt').classList.remove('sel'));
+    this.classList.add('sel'); this.querySelector('input').checked = true;
+  });
+});
+
+function setupCC(id, ccId, max) {
+  const ta = document.getElementById(id), ct = document.getElementById(ccId);
+  if (!ta||!ct) return;
+  ta.addEventListener('input', function() {
+    const l = this.value.length;
+    ct.textContent = l + ' / ' + max;
+    ct.className = 'char-counter' + (l > max*.9?' warn':'') + (l >= max?' over':'');
+  });
+}
+['bas-impacto:cc-bas:500','inf-desc:cc-inf:500','tra-desc:cc-tra:500','ife-desc:cc-ife:600','seg-desc:cc-seg:600','zonas-criticas:cc-zonas:700','voces-com:cc-voces:700','propuesta-com:cc-propuesta:600','brechas-desc:cc-brechas:600','compromisos-desc:cc-compromisos:600','rec-espacio:cc-espacio:600','rec-infraestr:cc-rec-inf:600','rec-iluminacion:cc-rec-ilum:500','conclusion:cc-conclusion:900','desc-sector:cc-sector:600'].forEach(s => {
+  const [id,ccId,max] = s.split(':');
+  setupCC(id, ccId, parseInt(max));
+});
+
+function previsualizarFotos(event) {
+  const preview = document.getElementById('photo-preview');
+  preview.innerHTML = '';
+  Array.from(event.target.files).slice(0,10).forEach(file => {
+    const r = new FileReader();
+    r.onload = e => { const img = document.createElement('img'); img.src = e.target.result; img.className='photo-thumb'; preview.appendChild(img); };
+    r.readAsDataURL(file);
+  });
+}
+
+function guardarBorrador() {
+  try {
+    sessionStorage.setItem('p4_borrador', JSON.stringify({
+      codigo: document.getElementById('codigo').value,
+      fecha: document.getElementById('fecha').value,
+      localidad: document.getElementById('localidad').value,
+      barrio: document.getElementById('barrio').value,
+      responsable: document.getElementById('resp-nombre').value,
+      timestamp: new Date().toISOString()
+    }));
+    alert('✅ Borrador guardado. Puede continuar más tarde.');
+  } catch(e) { alert('No fue posible guardar el borrador.'); }
+}
+
+function enviarFicha() {
+  if (!validar(5)) return;
+  const codigo = document.getElementById('codigo').value || 'P4-SIN-CODIGO';
+  document.getElementById('success-code').textContent = codigo;
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+  document.getElementById('success').classList.add('visible');
+  document.getElementById('prog-fill').style.width = '100%';
+  document.getElementById('pct').textContent = '100%';
+  document.querySelectorAll('.ps').forEach(s => s.classList.add('done'));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function nuevaFicha() {
+  document.getElementById('success').classList.remove('visible');
+  document.getElementById('sec-0').classList.add('visible');
+  currentSection = 0; updateProgress(0);
+  document.getElementById('photo-preview').innerHTML = '';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+updateProgress(0);
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('fecha').value = today;
+generarCodigo();
+</script>
+</body>
+</html>
