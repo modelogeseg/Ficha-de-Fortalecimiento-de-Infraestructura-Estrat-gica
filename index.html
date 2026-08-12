@@ -598,7 +598,7 @@ hr.field-sep{border:none;border-top:1px solid var(--border2);margin:16px 0;}
 
         <div class="field">
           <label>Localidad <span class="req">*</span></label>
-          <select id="localidad" required onchange="generarCodigo()">
+          <select id="localidad" required onchange="generarCodigo(); actualizarBarrios()">
             <option value="">— Seleccione la localidad —</option>
             <option value="MET">Metropolitana</option>
             <option value="NCH">Norte-Centro Histórico</option>
@@ -612,8 +612,10 @@ hr.field-sep{border:none;border-top:1px solid var(--border2);margin:16px 0;}
         <div class="field-row">
           <div class="field">
             <label>Barrio / Sector <span class="req">*</span></label>
-            <input type="text" id="barrio" placeholder="Nombre del barrio o sector" required>
-            <div class="val-msg" id="val-barrio">Ingrese el nombre del barrio.</div>
+            <select id="barrio" required>
+              <option value="">— Primero seleccione la localidad —</option>
+            </select>
+            <div class="val-msg" id="val-barrio">Seleccione el barrio o sector.</div>
           </div>
           <div class="field">
             <label>Tipo de sesión <span class="req">*</span></label>
@@ -636,8 +638,8 @@ hr.field-sep{border:none;border-top:1px solid var(--border2);margin:16px 0;}
         <div class="sub-hdr">📍 Coordenadas GPS del Sector</div>
         <div class="info-box stl"><span class="ico">📡</span><p>Capture las coordenadas del punto central del sector a cartografiar. Si está en el salón comunal, capture la ubicación al salir al campo.</p></div>
         <div class="gps-row">
-          <div class="field"><label>Latitud</label><input type="text" id="lat" placeholder="Ej: 10.9685" readonly></div>
-          <div class="field"><label>Longitud</label><input type="text" id="lng" placeholder="Ej: -74.7813" readonly></div>
+          <div class="field"><label>Latitud</label><input type="text" id="lat" placeholder="Ej: 10.9685"></div>
+          <div class="field"><label>Longitud</label><input type="text" id="lng" placeholder="Ej: -74.7813"></div>
           <button class="btn-gps" id="btn-gps" onclick="capturarGPS()">📡 Capturar GPS</button>
         </div>
         <div class="gps-status" id="gps-status"></div>
@@ -1194,6 +1196,95 @@ hr.field-sep{border:none;border-top:1px solid var(--border2);margin:16px 0;}
 </div>
 
 <script>
+// ── CATÁLOGO TERRITORIAL OFICIAL ──
+const catalogoTerritorial = {
+  "Metropolitana": [
+    "Buenos Aires", "Carrizal", "Cevillar", "Ciudadela 20 de Julio", "El Santuario",
+    "Kennedy", "La Sierra", "La Sierrita", "Las Americas", "Las Cayenas",
+    "Las Gardenias", "Las Granjas", "Los Continentes", "Los Girasoles",
+    "San Luis", "Santa María", "Santo Domingo de Guzman", "Sevilla Real",
+    "Siete de Abril", "Sinaí", "Veinte de Julio", "Villa San Carlos",
+    "Villa San Pedro", "Villa Sevilla", "Villa Valery"
+  ],
+  "Norte-Centro Histórico": [
+    "Abajo", "Alameda del Rio", "Altos del Prado", "America", "Barlovento",
+    "Bellavista", "Bethania", "Bostón", "Campo Alegre", "Centro",
+    "Ciudad Jardín", "Colombia", "El Castillo", "El Golf", "El Porvenir",
+    "El Prado", "El Recreo", "El Rosario", "El Tabor", "Granadillo",
+    "La Campiña", "La Concepción", "La Cumbre", "La Loma", "Las Delicias",
+    "Las Mercedes", "Las Nubes (vereda)", "Los Alpes", "Los Jobos", "Los Nogales",
+    "Miramar", "Modelo", "Montecristo", "Nuevo Horizonte", "Paraiso",
+    "San Francisco", "Santa Ana", "Villa Country", "Villanueva",
+    "Zona Franca", "Zona Industrial"
+  ],
+  "Riomar": [
+    "Altamira", "Altos de Riomar", "Altos del Limón", "Andalucia",
+    "Corregimiento Eduardo Santos La Playa", "El Limoncito", "El Poblado",
+    "La Floresta", "Las Flores", "Las Tres Ave Maria", "Riomar",
+    "San Salvador", "San Vicente", "Santa Mónica", "Siape",
+    "Solaire Norte", "Villa Campestre", "Villa Carolina", "Villa del Este",
+    "Villa Santos"
+  ],
+  "Suroccidente": [
+    "Alfonso López", "Bernardo Hoyos", "Buena Esperanza", "California", "Caribe Verde",
+    "Carlos Meisel", "Ciudad Modesto", "Ciudadela de la Salud", "Ciudadela de Paz",
+    "Colina Campestre", "Cordialidad", "Corregimiento de Juan Mina", "Cuchilla de Villate",
+    "El Bosque", "El Carmén", "El Eden", "El Pueblo", "El Romance", "El Rubí",
+    "El Silencio", "El Valle", "Evaristo Sourdis", "Gerlein y Villate", "Kalamary",
+    "La Ceiba", "La Esmeralda", "La Florida", "La Gloria", "La Libertad", "La Manga",
+    "La Paz", "La Pradera", "Las Colinas", "Las Estrellas", "Las Malvinas",
+    "Las Terrazas", "Lipaya", "Loma Fresca", "Los Andes", "Los Angeles I",
+    "Los Angeles II", "Los Angeles III", "Los Olivos I", "Los Olivos II",
+    "Los Pinos", "Los Rosales", "Lucero", "Me Quejo", "Mercedes Sur",
+    "Nueva Colombia", "Nueva Granada", "Olaya", "Pinar del Rio", "Por Fin",
+    "Pumarejo", "San Felipe", "San Isidro", "San Pedro Alejandrino",
+    "San Pedro Sector I", "Santo Domigo", "Siete de Agosto", "Villa del Rosario",
+    "Villa Flor", "Villas de la Cordialidad", "Villas de San Pablo"
+  ],
+  "Suroriente": [
+    "Atlántico", "Bellarena", "Boyaca", "Chiquinquira", "El Campito",
+    "El Limón", "El Milagro", "El Parque Sector Barranquilla", "José Antonio Galán",
+    "La Arboraya", "La Chinita", "La Luz", "La Magdalena", "La Unión",
+    "La Victoria", "Las Dunas", "Las Nieves", "Las Palmas", "Las Palmeras",
+    "Los Laureles", "Los Trupillos", "Moderno", "Montes", "Pasadena",
+    "Primero de Mayo El Ferry", "Rebolo", "San Jose", "San Nicolás",
+    "San Roque", "Santa Helena", "Simón Bolívar", "Tayrona", "Universal I",
+    "Universal II", "Villa Blanca", "Villa del Carmén"
+  ]
+};
+
+// Mapeo de valores del select a nombres de localidad
+const localidadMap = {
+  "MET": "Metropolitana",
+  "NCH": "Norte-Centro Histórico",
+  "RIO": "Riomar",
+  "SOC": "Suroccidente",
+  "SOR": "Suroriente"
+};
+
+function actualizarBarrios() {
+  const selectLocalidad = document.getElementById('localidad');
+  const selectBarrio = document.getElementById('barrio');
+  const localidadKey = selectLocalidad.value;
+  const localidadNombre = localidadMap[localidadKey] || '';
+
+  selectBarrio.innerHTML = '';
+
+  if (!localidadNombre || !catalogoTerritorial[localidadNombre]) {
+    selectBarrio.innerHTML = '<option value="">— Primero seleccione la localidad —</option>';
+    return;
+  }
+
+  const barrios = catalogoTerritorial[localidadNombre];
+  selectBarrio.innerHTML = '<option value="">— Seleccione el barrio o sector —</option>';
+  barrios.forEach(barrio => {
+    const option = document.createElement('option');
+    option.value = barrio;
+    option.textContent = barrio;
+    selectBarrio.appendChild(option);
+  });
+}
+
 let currentSection = 0;
 const totalSections = 6;
 
@@ -1372,6 +1463,7 @@ function nuevaFicha() {
   document.getElementById('sec-0').classList.add('visible');
   currentSection = 0; updateProgress(0);
   document.getElementById('photo-preview').innerHTML = '';
+  document.getElementById('barrio').innerHTML = '<option value="">— Primero seleccione la localidad —</option>';
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -1379,6 +1471,7 @@ updateProgress(0);
 const today = new Date().toISOString().split('T')[0];
 document.getElementById('fecha').value = today;
 generarCodigo();
+actualizarBarrios();
 </script>
 </body>
 </html>
